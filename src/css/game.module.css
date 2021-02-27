@@ -1,0 +1,36 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+.main {
+  margin: 0 auto;
+  width: 100vw;
+  max-width: 1024px;
+  height: 100vh;
+  background-color: rgb(140, 164, 243);
+  font-family: 'Bangers', cursive;
+  color: blue;
+  opacity: 0.5;
+  font-size: 60px;
+  position: relative;
+
+}
+
+.logo {
+  margin: auto;
+}
+
+.logoimg, .logoName {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logoimg {
+  width: 400px;
+}
+
+.hide {
+  display: none;
+}
+
