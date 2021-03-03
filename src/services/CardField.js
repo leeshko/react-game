@@ -1,7 +1,6 @@
-import checkCardNum from "../components/Card.js";
 
 const cards = {
-    numberOfCards: 5,
+    numberOfCards: 2,
     cardBack: 1
 }
 

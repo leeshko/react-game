@@ -1,7 +1,5 @@
 import st from '../css/options.module.css';
 import React from 'react'
-import StartButton from './Button';
-import Game from "./Game";
 
 
 
