@@ -5,7 +5,7 @@ import Game from "./Game";
 
 
 
-const changeScreenToOptions = () => {
+const OptionsScreen = (props) => {
     
     return (
         <div className={st.main}>
@@ -14,16 +14,16 @@ const changeScreenToOptions = () => {
                 <div className={st.lefSection}>
                     <div className=''>
                         <label htmlFor="sizing">Volume Level</label>
-                        <input id="sizing" type="range" name="sizing" min="1" max="100" value="1"></input>
+                        <input id="sizing" type="range" name="sizing" min="1" max="100"  onChange={(e) => console.log(e.target.value, 'checked')}></input>
                     </div>
                     <div className=''>
                         <label className="switch">music Off</label>
-                        <input id="checkbox" type="checkbox"></input>
+                        <input id="checkbox" type="checkbox" onChange={() => console.log('checked')}></input>
 
                     </div>
                     <div className=''>
                         <label htmlFor="sizing">Sound Level</label>
-                        <input id="sizing" type="range" name="sizing" min="1" max="100" value="1"></input>
+                        <input id="sizing" type="range" name="sizing" min="1" max="100"></input>
                     </div>
                     <div className=''>
                         <label className="switch">sound Off</label>
@@ -45,11 +45,12 @@ const changeScreenToOptions = () => {
                     <div className=''>card back</div>
                     <div className=''>card image</div>
                 </div>
-                <StartButton link={<Game/>} name='START'/>
+                {props.children}
+               
             </div>
 
         </div>
     )
 }
 
-export default changeScreenToOptions;
+export default OptionsScreen;

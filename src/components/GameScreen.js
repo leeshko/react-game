@@ -1,52 +1,59 @@
-import React from 'react';
-import s from '../css/gameScreen.module.css';
-import Card from './Card';
+import React from "react";
+import s from "../css/gameScreen.module.css";
+import Card from "./Card";
+import randomArray from "../services/CardField";
 
+export default class GameScreen extends React.Component {
+  constructor(props) {
+    super(props);
 
-const cards = {
-    numberOfCards: 8,
-    cardBack: 1
-}
+    this.state = {
+      firstCard: null,
+      secondCard: null,
+      clicks: 0,
+      score: 0
+    };
+  }
 
-const getRandomInt = max => Math.floor(Math.random() * Math.floor(max));
-const cardsQuantity = cards.numberOfCards * 2;
-
-let arr = cardsArray(cardsQuantity);
-let cardsArr = randomArray(arr);
-
-
-function cardsArray(num) {
-    let numArray = [];
-    for (let i = 0; i < num / 2; i++) {
-        numArray.push(i);
+  updateCardList = (index) => {
+    if (this.state.clicks === 1) {
+        this.setState({ secondCard: index, clicks: 2 });
+    } else {
+      this.setState({ firstCard: index, secondCard: null, clicks: 1 });
     }
-    return numArray.concat(numArray);
-}
+   
+  }
 
-function randomArray(array) {
-    for (let i = cardsQuantity - 1; i >= 0; i--) {
-        let randomIndex = getRandomInt(i);
-        let interNum = array[i];
-        array[i] = array[randomIndex];
-        array[randomIndex] = interNum;
+  compareResults() {
+    if (this.cardsArr[this.state.firstCard] === this.cardsArr[this.state.secondCard]) {
+        this.setState({ score: this.state.score + 1 });
+    } else {
+        /*turn cards*/
     }
-    return array;
-}
+  }
 
+  handleClick = () => {
+    //   console.log(this.props.cardNum);
+    // console.log((this.props.ind));
+  };
 
-
-const GameScreen = () => {
-
+  cardsArr = randomArray();
+  render() {
     return (
-        <div className={s.main}>
-            <div className={s.cardField}>
-               
-             {cardsArr.map(e => <Card number = {e}/>)}     {/*пока не знаю, как задать key={e}*/}
-            
-            </div>
+      <div className={s.main}>
+        <div className={s.cardField} onClick={this.handleClick}>
+          {this.cardsArr.map((e, index) => (
+            <Card
+              key={index}
+              cardNum={index}
+              number={`../images/cards/${e}.png`}
+              ind={e}
+              updateCardList={this.updateCardList}
+              isOpen={this.state.firstCard === index || this.state.secondCard === index}
+            />
+          ))}
         </div>
-    )
+      </div>
+    );
+  }
 }
-
-
-export default GameScreen;

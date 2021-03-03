@@ -1,20 +1,32 @@
-// import '../css/card.css';
-import React from 'react';
-import s from '../css/card.module.css';
+import React from "react";
+import "../css/card.css";
 
+export default class Card extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-export default function Card(props) {
-
-  return (
-    <div className={s.flipcard}>
-      <div className={s.front}>
-        {props.number}
+  render() {
+    return (
+      <div
+        className={"flip-card " + (this.props.isOpen ? " active" : "")}
+        onClick={() => {
+          this.props.updateCardList(this.props.cardNum);
+        }}
+      >
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <img
+              className="frontCard"
+              src="../images/cards/back2.png"
+              alt="Logo"
+            ></img>
+          </div>
+          <div className="flip-card-back">
+            <img className="backCard" src={this.props.number} alt="Logo"></img>
+          </div>
+        </div>
       </div>
-      <div className={s.back}>
-        This is the back side
-      </div>
-    </div>
-  )
+    );
+  }
 }
-
-

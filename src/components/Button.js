@@ -5,7 +5,7 @@ import React from 'react';
 export default function StartButton(props) {
     
     return (
-        <a href={props.link}>
+      <a className="buttonLink" href="#" onClick={props.onClick}>
         <span></span>
         <span></span>
         <span></span>
