@@ -1,6 +1,6 @@
 
 const cards = {
-    numberOfCards: 2,
+    numberOfCards: 8,
     cardBack: 1
 }
 
