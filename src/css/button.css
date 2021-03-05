@@ -22,6 +22,8 @@ body {
     color: #1428e2;
     transition: 0.5s;
     overflow: hidden;
+    background: transparent;
+    font-family: 'Bangers', cursive;
   }
   .buttonLink:hover {
     color: rgb(236, 27, 27);
@@ -54,7 +56,7 @@ body {
     top: -100%;
     right: -100%;
   }
-  a:hover span:nth-child(3) {
+  .buttonLink:hover span:nth-child(3) {
     top: 0;
     right: 0;
   }

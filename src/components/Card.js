@@ -2,10 +2,6 @@ import React from "react";
 import "../css/card.css";
 
 export default class Card extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div

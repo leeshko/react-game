@@ -5,14 +5,14 @@ import React from 'react';
 export default function StartButton(props) {
     
     return (
-      <a className="buttonLink" href="#" onClick={props.onClick}>
+      <button className="buttonLink"  onClick={props.onClick}>
         <span></span>
         <span></span>
         <span></span>
         <span></span>
         
         {props.name}
-      </a>
+      </button>
     )
 }
 
