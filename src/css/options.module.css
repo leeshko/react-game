@@ -1,0 +1,35 @@
+.main {
+    margin: auto;
+    
+    max-width: 1024px;
+    height: 100vh;
+    background-color: rgb(140, 164, 243);
+    font-family: 'Bangers', cursive;
+    color: blue;
+    opacity: 0.5;
+    font-size: 60px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+
+.logoText {
+    padding-top: 30px;
+}
+
+.optionsSection {
+    font-size: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.leftSection {
+    text-align: left;
+}
+
+.rightSection {
+    text-align: left;
+}
